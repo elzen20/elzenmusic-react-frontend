@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import items from "./menu";
+import Header from "./layout/header";
+import Content from "./layout/content";
 
-function App() {
+
+function App(props) {
+  const { children } = props;
+  console.log()
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header items={items}></Header>
+      <Content body={children}></Content>
     </div>
   );
 }
