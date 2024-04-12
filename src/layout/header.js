@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -41,7 +42,7 @@ function Header(props) {
                 {items &&
                   items.map((item, key) => (
                     <li key={key}>
-                      <Nav.Link href={item.url}>{item.title}</Nav.Link>
+                      <Link to={item.url}>{item.title}</Link>
                     </li>
                   ))}
                 <Button variant="success">

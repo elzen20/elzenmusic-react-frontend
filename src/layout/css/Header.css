@@ -35,6 +35,16 @@
       color: #CCC;
       text-decoration: none;
       font-family: fantasy;
+      border-radius: 10px;
+      display: block;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      font-size: var(--bs-nav-link-font-size);
+      font-weight: var(--bs-nav-link-font-weight);
+      padding-right: var(--bs-navbar-nav-link-padding-x);
+      padding-left: var(--bs-navbar-nav-link-padding-x);
+      background: 0 0;
+      border: 0;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
   }
   /* .Menu li:last-child {
       border-radius: 10px;
@@ -54,7 +64,7 @@
   .Menu li a:hover {
       color: rgb(56, 13, 78);
       background-color: aqua;
-      border-radius: 10px;
+
   }
 .Logo1{
   height: 100%;
