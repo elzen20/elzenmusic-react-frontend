@@ -9,7 +9,7 @@ export default [
       url: '/music'
     },
     {
-      title: 'Tabs',
+      title: 'Tabs/Sheets',
       url: '/tabs'
     },
     // {

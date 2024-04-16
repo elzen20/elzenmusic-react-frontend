@@ -5,7 +5,6 @@ import Content from "./layout/content";
 
 function App(props) {
   const { children } = props;
-  console.log()
   
   return (
     <div>

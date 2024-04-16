@@ -3,22 +3,12 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import { FaShoppingCart } from 'react-icons/fa';
+import Cart from "../components/cart.js"
+
 import "./css/Header.css";
 
 function Header(props) {
   const { items } = props;
-  
-
-  // Calcular la cantidad total de items en el carrito
-  const products = [
-    { url: "/producto1", title: "Producto 1", quantity: 3 },
-    { url: "/producto2", title: "Producto 2", quantity: 1 },
-    { url: "/producto3", title: "Producto 3", quantity: 2 }
-  ];
-  const itemCount = products.reduce((total, item) => total + item.quantity, 0);
-
   return (
     <div className="Header">
       <Container>
@@ -45,11 +35,7 @@ function Header(props) {
                       <Link to={item.url}>{item.title}</Link>
                     </li>
                   ))}
-                <Button variant="success">
-                  <FaShoppingCart className="mx-1"/> 
-                Ir Al carrito 
-                  <span className="item-count mx-1 px-1">{itemCount}</span>
-                </Button>
+               <Cart/>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
