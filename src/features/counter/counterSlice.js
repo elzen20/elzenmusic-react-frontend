@@ -74,7 +74,11 @@ export const counterSlice = createSlice({
     },
     removeTabFromCart(state, action) {
       const { id } = action.payload;
-      state.cached = false;
+      const index = state.tabs.findIndex(
+        (tab) => tab.id === action.payload.id
+      );
+      state.tabs[index].buttonTitle = "Agregar Tab";
+      state.tabs[index].variant = "success";
       state.requestedTabs = state.requestedTabs.filter((tab) => tab.id !== id);
       let priceNumber = parseFloat(action.payload.price.replace(/[^\d.]/g, ""));
       if (state.total !== "") {

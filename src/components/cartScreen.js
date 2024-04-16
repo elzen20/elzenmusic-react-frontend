@@ -1,8 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
-import ListGroup from "react-bootstrap/ListGroup";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 import { selectRequestedTabs, selectTotal, removeTabFromCart } from "../features/counter/counterSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
@@ -45,6 +43,9 @@ function CartScreen() {
         </tbody>
       </Table>
       <h1 className="py-5">Total: {total}</h1>
+      <Button variant="info" onClick={()=>alert(JSON.stringify(requestedTabs))}>
+          Comprar
+      </Button>
     </Container>
   );
 }
