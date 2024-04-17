@@ -35,15 +35,15 @@ function CartScreen() {
             <tr key={idx}>
               <td>{idx + 1}</td>
               <td>{requestedTab.title}</td>
-              <td>{requestedTab.price}</td>
+              <td>{ `$ ${requestedTab.price} MXN`}</td>
               <td><Button variant="danger" onClick={()=> dispatch(removeTabFromCart(requestedTab))}>Remover</Button></td>
 
             </tr>
           ))}
         </tbody>
       </Table>
-      <h1 className="py-5">Total: {total}</h1>
-      <Button variant="info" onClick={()=>alert(JSON.stringify(requestedTabs))}>
+      <h1 className="py-5">Total: {`$ ${total.toFixed(2)} MXN`}</h1>
+      <Button variant="info" onClick={()=>navigate("/checkout")}>
           Comprar
       </Button>
     </Container>

@@ -8,7 +8,7 @@ const initialState = {
   requestedTabs: [],
   disabledTabFlag: false,
   tabButtonTitle: "Agregar Tablatura",
-  total: "",
+  total: 0,
   cached: false,
 };
 
@@ -53,16 +53,10 @@ export const counterSlice = createSlice({
 
         state.requestedTabs.push(action.payload);
 
-        let priceNumber = parseFloat(
-          action.payload.price.replace(/[^\d.]/g, "")
-        );
         // Sumas el precio extraído al total acumulado
-        if (state.total !== "") {
-          let total = parseFloat(state.total.replace(/[^\d.]/g, "")); // Extraes el número del total actual
-          total += priceNumber; // Sumas el precio extraído al total acumulado
-
+        if (state.total !== 0) {
           // Actualizas el estado o la variable del total
-          state.total = `$ ${total} MXN`;
+          state.total += action.payload.price ;
         } else {
           state.total = action.payload.price;
         }
@@ -80,13 +74,9 @@ export const counterSlice = createSlice({
       state.tabs[index].buttonTitle = "Agregar Tab";
       state.tabs[index].variant = "success";
       state.requestedTabs = state.requestedTabs.filter((tab) => tab.id !== id);
-      let priceNumber = parseFloat(action.payload.price.replace(/[^\d.]/g, ""));
-      if (state.total !== "") {
-        let total = parseFloat(state.total.replace(/[^\d.]/g, "")); // Extraes el número del total actual
-        total -= priceNumber; // Restas el precio extraído al total acumulado
-
+      if (state.total !== 0) {
         // Actualizas el estado o la variable del total
-        state.total = `$ ${total} MXN`;
+        state.total -= action.payload.price ;
       } else {
         state.total = action.payload.price;
       }
@@ -143,7 +133,7 @@ export const {
   decrement,
   incrementByAmount,
   addTabToCart,
-  removeTabFromCart,
+  removeTabFromCart
 } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
