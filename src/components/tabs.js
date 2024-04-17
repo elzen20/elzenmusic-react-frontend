@@ -29,7 +29,7 @@ function Tabs() {
               <Card.Body>
                 <Card.Title>{tab.title}</Card.Title>
                 <Card.Text>
-                {tab.price}
+                { `$ ${tab.price} MXN`}
               </Card.Text>
                 <Button variant={tab.variant} onClick={() => dispatch(addTabToCart(tab))}>
                   {tab.buttonTitle}
