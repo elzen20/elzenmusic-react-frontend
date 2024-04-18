@@ -27,7 +27,8 @@ export default function CheckoutForm() {
         // Make sure to change this to your payment completion page
         return_url: `${window.location.origin}/completion`,
       },
-    });
+    })
+
 
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
