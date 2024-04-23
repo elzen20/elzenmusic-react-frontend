@@ -10,6 +10,9 @@ const initialState = {
   tabButtonTitle: "Agregar Tablatura",
   total: 0,
   cached: false,
+  request:[],
+  email:'',
+  emailValid:false
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -81,6 +84,14 @@ export const counterSlice = createSlice({
         state.total = action.payload.price;
       }
     },
+    checkout(state, action){
+      state.request[0]={email:action.payload,requestTabs:state.requestedTabs} 
+    },
+    handleEmailChange (state,action) {
+      state.email = action.payload;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      state.emailValid = emailRegex.test(action.payload);
+    },
     increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
@@ -133,7 +144,9 @@ export const {
   decrement,
   incrementByAmount,
   addTabToCart,
-  removeTabFromCart
+  removeTabFromCart,
+  checkout,
+  handleEmailChange
 } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
@@ -142,8 +155,11 @@ export const {
 export const selectCount = (state) => state.counter.value;
 export const selectTabs = (state) => state.counter.tabs;
 export const selectRequestedTabs = (state) => state.counter.requestedTabs;
+export const selectRequest = (state) => state.counter.request;
 export const selectTabButtonTitle = (state) => state.counter.tabButtonTitle;
 export const selectTotal = (state) => state.counter.total;
+export const selectEmail = (state) => state.counter.email;
+export const selectEmailValid = (state) => state.counter.emailValid;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

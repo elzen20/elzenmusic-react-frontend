@@ -4,10 +4,10 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import { Container } from "react-bootstrap";
-import { selectRequestedTabs, selectTotal } from "../features/counter/counterSlice";
+import { selectRequestedTabs, selectRequest } from "../features/counter/counterSlice";
 import { useSelector, useDispatch } from "react-redux";
 function Payment() {
-  const requestedTabs = useSelector(selectRequestedTabs);
+  const request = useSelector(selectRequest);
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -23,12 +23,12 @@ function Payment() {
       method: "POST", headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(requestedTabs),
+      body: JSON.stringify(request),
     },).then(async (result) => {
       var { clientSecret } = await result.json();
       setClientSecret(clientSecret);
     });
-  }, [requestedTabs]);
+  }, [request]);
 
   return (
     <Container>
