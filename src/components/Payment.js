@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./checkout";
+import CheckoutForm from "./Checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import { Container } from "react-bootstrap";
-import { selectRequestedTabs, selectRequest } from "../features/counter/counterSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { selectRequest } from "../features/counter/counterSlice";
+import { useSelector } from "react-redux";
 function Payment() {
   const request = useSelector(selectRequest);
   const [stripePromise, setStripePromise] = useState(null);
@@ -20,11 +20,12 @@ function Payment() {
 
   useEffect(() => {
     fetch("/create-payment-intent", {
-      method: "POST", headers: {
-        "Content-Type": "application/json"
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(request),
-    },).then(async (result) => {
+    }).then(async (result) => {
       var { clientSecret } = await result.json();
       setClientSecret(clientSecret);
     });

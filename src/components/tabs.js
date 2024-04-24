@@ -1,12 +1,12 @@
-import { Counter } from "../features/counter/Counter";
-import { increment, fetchProductsAsync, selectTabs, addTabToCart, selectTabButtonTitle } from "../features/counter/counterSlice";
+
+import { fetchProductsAsync, selectTabs, addTabToCart } from "../features/counter/counterSlice";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function Tabs() {
   const dispatch = useDispatch();

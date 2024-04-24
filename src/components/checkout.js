@@ -1,7 +1,6 @@
 import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export default function CheckoutForm() {
@@ -22,8 +21,7 @@ export default function CheckoutForm() {
 
     setIsProcessing(true);
 
-    const { error } = await stripe.confirmPayment(navigate('/completion'))
-
+    const { error } = await stripe.confirmPayment(navigate("/completion"));
 
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
@@ -37,7 +35,11 @@ export default function CheckoutForm() {
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
-      <button className="checkout-button my-5" disabled={isProcessing || !stripe || !elements} id="submit">
+      <button
+        className="checkout-button my-5"
+        disabled={isProcessing || !stripe || !elements}
+        id="submit"
+      >
         <span id="button-text">
           {isProcessing ? "Processing ... " : "Pay now"}
         </span>

@@ -1,6 +1,6 @@
 import items from "./menu";
-import Header from "./layout/header";
-import Content from "./layout/content";
+import Header from "./layout/Header";
+import Content from "./layout/Content";
 
 
 function App(props) {
