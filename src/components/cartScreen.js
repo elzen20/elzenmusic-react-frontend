@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
@@ -13,7 +13,7 @@ import {
   checkout,
   handleEmailChange,
   selectEmail,
-  selectEmailValid
+  selectEmailValid,
 } from "../features/counter/counterSlice";
 
 function CartScreen() {
@@ -24,19 +24,18 @@ function CartScreen() {
   const email = useSelector(selectEmail);
   const emailValid = useSelector(selectEmailValid);
 
-
   useEffect(() => {
     if (requestedTabs.length === 0) {
       navigate("/tabs");
     }
   }, [requestedTabs, navigate]);
-  
+
   const handleEmail = (e) => {
     dispatch(handleEmailChange(e.target.value));
   };
   const handleCheckout = () => {
     dispatch(checkout(email));
-    navigate("/checkout")
+    navigate("/checkout");
   };
 
   return (

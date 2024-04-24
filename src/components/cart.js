@@ -1,29 +1,25 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useLocation } from 'react-router-dom';
-import {
-  selectCount,
-  selectRequestedTabs,
-} from "../features/counter/counterSlice";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { selectRequestedTabs } from "../features/counter/counterSlice";
 import { Link } from "react-router-dom";
 function Cart() {
   var location = useLocation();
-  
+
   const requestedTabs = useSelector(selectRequestedTabs);
   const [disabledCart, setDisabledCart] = useState(true);
   const [linkRoute, setLinkRoute] = useState("");
-  useEffect(()=>{
-    
-    if(requestedTabs.length !==0){
-      setDisabledCart(false)
-      setLinkRoute("/cartScreen")
-    }else{
-      setLinkRoute(location.pathname)
-      setDisabledCart(true)
+  useEffect(() => {
+    if (requestedTabs.length !== 0) {
+      setDisabledCart(false);
+      setLinkRoute("/cartScreen");
+    } else {
+      setLinkRoute(location.pathname);
+      setDisabledCart(true);
     }
-  }, [requestedTabs, location])
+  }, [requestedTabs, location]);
 
   return (
     <div>

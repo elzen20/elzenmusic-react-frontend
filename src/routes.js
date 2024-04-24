@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Music from "./components/music";
-import Home from "./components/home";
-import Tabs from "./components/tabs";
-import CartScreen from "./components/cartScreen";
+import Music from "./components/Music";
+import Home from "./components/Home";
+import Tabs from "./components/Tabs";
+import CartScreen from "./components/CartScreen";
 import Payment from "./components/Payment";
 import Completion from "./components/Completion";
 import App from "./App";
