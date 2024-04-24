@@ -1,11 +1,11 @@
 import { Container } from "react-bootstrap";
 import { useEffect } from "react";
-import { selectRequest } from "../features/counter/counterSlice";
-import { useSelector } from "react-redux";
+import { selectRequest, cleaningRequestedTabs } from "../features/counter/counterSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 function Completion() {
   const request = useSelector(selectRequest);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const initiateDownload = async () => {
       try {
@@ -16,24 +16,17 @@ function Completion() {
           },
           body: JSON.stringify(request),
         });
-
         if (!response.ok) {
           throw new Error("Error al iniciar la descarga del PDF");
         }
-
         // Obtener el nombre del archivo del encabezado Content-Disposition
         const contentDisposition = response.headers.get("Content-Disposition");
-        console.log("contentDisposition: ", contentDisposition);
         let filename = contentDisposition.split("filename=")[1];
-        console.log("filename: ", filename);
         // Eliminar guiones bajos al principio y al final del nombre del archivo
         filename = filename.replace(/^"|"$/g, ""); // Eliminar comillas al principio y al final
         filename = filename.replace(/^_+|_+$/g, "");
-        console.log("filename: ", filename);
-
         // Convertir la respuesta en un objeto Blob
         const blob = await response.blob();
-
         // Crear un enlace para descargar el archivo
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
@@ -41,22 +34,21 @@ function Completion() {
         a.download = filename; // Nombre del archivo
         document.body.appendChild(a);
         a.click();
-        console.log("a: ", a);
-
+        dispatch(cleaningRequestedTabs())
         // Liberar el objeto URL creado
         window.URL.revokeObjectURL(url);
       } catch (error) {
-        console.error("Error al descargar el PDF:", error);
         console.error(error);
       }
     };
 
     initiateDownload();
-  }, [request]);
+  }, [request, dispatch]);
 
   return (
     <Container className="my-5 text-align">
-      <h1>¡Gracias por su compra! 🎉</h1>
+      <h1>¡Gracias por su compra! 🎉🎸</h1>
+      <span className="m-5">Sus tablaturas han sido enviadas a su correo. Addicionalmente se tuvo que haber descargado un zip con sus tablaturas desde su navegador</span>
     </Container>
   );
 }
