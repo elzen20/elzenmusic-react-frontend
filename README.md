@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# ElzenMusic React Frontend
+
+This is the Elzenmusic Frontend Website project, it includes some information, videos, music, photos, and tabs/sheets of Elzenmusic. The tabs/sheets is a storethat will be updated very often with more items. It fetch data from a Firestore database and also request stripe data from the elzenmusic-backend-node proyect.
+
+It requires an `.env` file:
+- REACT_APP_FIREBASE_API_KEY=<REACT_APP_FIREBASE_API_KEY>
+- REACT_APP_FIREBASE_AUTH_DOMAIN=<REACT_APP_FIREBASE_AUTH_DOMAIN>
+- REACT_APP_FIREBASE_PROJECT_ID=<REACT_APP_FIREBASE_PROJECT_ID>
+- REACT_APP_FIREBASE_STORAGE_BUCKET=<REACT_APP_FIREBASE_STORAGE_BUCKET>
+- REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<REACT_APP_FIREBASE_MESSAGING_SENDER_ID>
+- REACT_APP_FIREBASE_APP_ID=<REACT_APP_FIREBASE_APP_ID>
+- REACT_APP_FIREBASE_MEASUREMENT_ID=<REACT_APP_FIREBASE_MEASUREMENT_ID>
+
+Infraestructure:
+- Firestore
+- Firebase
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
