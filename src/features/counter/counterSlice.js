@@ -55,11 +55,11 @@ export const counterSlice = createSlice({
   reducers: {
     addTabToCart(state, action) {
       const alreadyInCart = state.requestedTabs.some(
-        (tab) => tab.id === action.payload.id
+        (tab) => tab.title === action.payload.title
       );
       if (!alreadyInCart) {
         const index = state.tabs.findIndex(
-          (tab) => tab.id === action.payload.id
+          (tab) => tab.title === action.payload.title
         );
         state.tabs[index].buttonTitle = "Has agregado esta tab";
         state.tabs[index].variant = "warning";
@@ -77,11 +77,11 @@ export const counterSlice = createSlice({
       }
     },
     removeTabFromCart(state, action) {
-      const { id } = action.payload;
-      const index = state.tabs.findIndex((tab) => tab.id === action.payload.id);
+      const { title } = action.payload;
+      const index = state.tabs.findIndex((tab) => tab.title === action.payload.title);
       state.tabs[index].buttonTitle = "Agregar Tab";
       state.tabs[index].variant = "success";
-      state.requestedTabs = state.requestedTabs.filter((tab) => tab.id !== id);
+      state.requestedTabs = state.requestedTabs.filter((tab) => tab.title !== title);
       if (state.total !== 0) {
         // Actualizas el estado o la variable del total
         state.total -= action.payload.price;
