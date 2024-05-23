@@ -22,12 +22,12 @@ function Cart() {
   }, [requestedTabs, location]);
 
   return (
-    <div>
+    <div className="d-flex justify-content-end fixed-top">
       <Link to={linkRoute}>
-        <Button disabled={disabledCart} variant="success">
-          <FaShoppingCart className="mx-1" />
-          Ir Al carrito
-          <span className="item-count mx-1 px-1">{requestedTabs.length}</span>
+        <Button disabled={disabledCart}  className="d-flex flex-column cart">
+        
+          <span className="item-count mx-1">{requestedTabs.length}</span>
+          <FaShoppingCart className="" />
         </Button>
       </Link>
     </div>

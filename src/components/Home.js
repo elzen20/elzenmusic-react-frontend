@@ -3,7 +3,7 @@ import { Carousel, Container, Row, Col } from "react-bootstrap";
 function Home() {
   return (
     <div className="Gallery">
-      <Container>
+      <Container fluid>
         <Row>
           <Col lg={{ span: 6, offset: 3 }}>
             <Carousel>
