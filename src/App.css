@@ -1,6 +1,7 @@
 
 .App {
   text-align: center;
+
 }
 
 
@@ -190,4 +191,12 @@ button:disabled {
     width: 80vw;
     min-width: initial;
   }
+}
+
+.fantasy{
+  font-family: fantasy !important;
+}
+
+.bg-purple{
+  background-color:rgb(56, 13, 78) !important;
 }
