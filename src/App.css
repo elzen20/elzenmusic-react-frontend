@@ -1,10 +1,11 @@
 
 .App {
   text-align: center;
+
 }
 
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 50%;
   display: flex;
@@ -14,7 +15,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding-bottom: 10px;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -64,6 +65,9 @@
   margin-bottom: 24px;
 }
 
+.typo{
+  margin-top: 10px !important;
+}
 /* Buttons and links */
 button {
   background: #5469d4;
@@ -187,4 +191,12 @@ button:disabled {
     width: 80vw;
     min-width: initial;
   }
+}
+
+.fantasy{
+  font-family: fantasy !important;
+}
+
+.bg-purple{
+  background-color:rgb(56, 13, 78) !important;
 }

@@ -1,6 +1,7 @@
 import items from "./menu";
 import Header from "./layout/Header";
 import Content from "./layout/Content";
+import Footer from "./layout/Footer";
 
 
 function App(props) {
@@ -10,6 +11,7 @@ function App(props) {
     <div>
       <Header items={items}></Header>
       <Content body={children}></Content>
+      <Footer items={items}></Footer>
     </div>
   );
 }

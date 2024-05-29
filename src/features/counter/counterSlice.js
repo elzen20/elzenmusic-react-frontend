@@ -24,16 +24,21 @@ const initialState = {
 export const fetchProductsAsync = createAsyncThunk(
   "cart/fetchProducts",
   async () => {
-    const response = [];
-    const q = query(collection(db, "tablatura"));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
+    try {
+      const response = [];
+      const q = query(collection(db, "tablatura"));
+      const querySnapshot = await getDocs(q);
 
-      response.push(doc.data());
-    });
-
-    return response;
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        response.push(doc.data());
+      });
+    
+      return response;
+    } catch (error) {
+      console.error("Error al recuperar los productos:", error);
+      throw error; // Re-throw para que Redux Toolkit maneje el error correctamente
+    }
   }
 );
 function defaultButtonProperties(state) {
