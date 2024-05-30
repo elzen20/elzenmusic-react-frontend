@@ -1,9 +1,10 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 .Header {
     text-align: center;
-    background-color:rgb(56, 13, 78);
+    background-color:rgb(74, 6, 77)!important;
     height: 25%;
-
+    background-image: url("../../../public/images/gold_pattern.png") !important;
+    background-size: contain;
     color: white;
     width: 100%;
   }
@@ -22,24 +23,25 @@
 
   .Menu {
       margin: 0;
-
+      
       list-style: none;
-      color:rgb(56, 13, 78);
+      color:rgb(74, 6, 77);
   }
 
   .Menu li {
       display: inline-block;
+      background-color: rgb(74, 6, 77);
 
   }
 
   .Menu li a {
-      color: #CCC;
+      color: #daa81e;
       text-decoration: none;
       font-family: fantasy;
       border-radius: 10px;
       display: block;
       padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-      font-size: var(--bs-nav-link-font-size);
+      font-size: 25px;
       font-weight: var(--bs-nav-link-font-weight);
       padding-right: var(--bs-navbar-nav-link-padding-x);
       padding-left: var(--bs-navbar-nav-link-padding-x);
@@ -47,34 +49,25 @@
       border: 0;
       transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
   }
-  /* .Menu li:last-child {
-      border-radius: 10px;
-      text-decoration: none;
-      background-color: green;
-      padding-right: 0;
-      
-  }
-  .Menu li:last-child::after {
-    content: "\f07a"; 
-    font-family: 'FontAwesome'; 
-    margin-left: 5px; 
-    color: #CCC;
-  }
-   */
 
   .Menu li a:hover {
-      color: rgb(56, 13, 78);
-      background-color: aqua;
+      color: rgb(74, 6, 77);
+      background-color: #daa81e;
 
   }
 
 .cart{
     font-size: 20px !important;
     border-radius: 0 0 0 4px !important;
-    background-color:rgb(56, 13, 78) !important;
+    background-color:#daa81e !important;
     border-color: white !important;
-    border-top-color: rgb(56, 13, 78) !important ;
-    border-right-color: rgb(56, 13, 78) !important ;
+    border-top-color: rgb(74, 6, 77) !important ;
+    border-right-color: rgb(74, 6, 77) !important ;
+    color: rgb(74, 6, 77) !important;
+  }
+
+  .cart:disabled{
+    opacity: 0.9 !important;
   }
 .Logo1{
   height: 100%;
@@ -86,7 +79,7 @@
   margin-top: 40px;
 }
 .item-count{
-  color:white;
+  color:rgb(74, 6, 77) !important;
   font-weight: bolder;
 
   border-radius: 25px;
@@ -106,7 +99,7 @@
 @media (max-width: 501px) {
   .Menu li a {
     
-    font-size: 12px;
+    font-size: 10px;
    
 }
 .cart{

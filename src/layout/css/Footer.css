@@ -1,7 +1,10 @@
 .footer {
-    background-color: #333 !important;
-    color: #fff;
+    background-color: #daa81e !important;
+    color: rgb(74, 6, 77);
     padding: 20px 0;
+    box-shadow: 2px -2px 7px 0px rgb(74, 6, 77) !important;
+    border-color: rgb(74, 6, 77) !important;
+    opacity: 0.9;
   }
   
   .footer .container {
@@ -21,7 +24,7 @@
   }
   
   .footer ul li a {
-    color: #fff;
+    color: rgb(74, 6, 77);
     text-decoration: none;
 
   }
