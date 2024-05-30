@@ -63,6 +63,11 @@
     border-color: white !important;
     border-top-color: rgb(74, 6, 77) !important ;
     border-right-color: rgb(74, 6, 77) !important ;
+    color: rgb(74, 6, 77) !important;
+  }
+
+  .cart:disabled{
+    opacity: 0.9 !important;
   }
 .Logo1{
   height: 100%;
@@ -74,7 +79,7 @@
   margin-top: 40px;
 }
 .item-count{
-  color:white;
+  color:rgb(74, 6, 77) !important;
   font-weight: bolder;
 
   border-radius: 25px;
@@ -94,7 +99,7 @@
 @media (max-width: 501px) {
   .Menu li a {
     
-    font-size: 12px;
+    font-size: 10px;
    
 }
 .cart{

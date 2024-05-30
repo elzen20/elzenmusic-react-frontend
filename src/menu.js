@@ -1,20 +1,24 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
-    title: 'Home',
+    title: 'Inicio',
     url: '/'
   },
     {
-      title: 'Music/Videos',
+      title: 'Música/Videos',
       url: '/music'
     },
     {
-      title: 'Tabs/Sheets',
+      title: 'Tablaturas',
       url: '/tabs'
     },
-    // {
-    //   title: 'Ir al Carrito',
-    //   url: '/cart'
-    // },
+    {
+      title: 'Bodas',
+      url: '/weddings'
+    },
+    {
+      title: 'Contacto',
+      url: '/contact'
+    },
 
   ];
