@@ -7,7 +7,7 @@ import Bio from "./home/Bio";
 import "../App.css";
 function Home() {
   return (
-    <div className="Gallery">
+    <div className="Gallery fade-in">
       <Container fluid>
         <Row className="mb-5 pb-5">
           {/* Noticias */}

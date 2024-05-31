@@ -12,7 +12,7 @@ function Header(props) {
   return (
     <div className="Header">
       
-      <Cart/>
+      {/* <Cart/> */}
         <div className="Logo  pt-4 ">
           <img src="images/elzen/ELZEN_white_logo.png" alt="logo" />
         </div>
