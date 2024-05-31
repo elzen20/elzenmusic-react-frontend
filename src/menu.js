@@ -8,13 +8,13 @@ export default [
       title: 'Música/Videos',
       url: '/music'
     },
+    // {
+    //   title: 'Tablaturas',
+    //   url: '/tabs'
+    // },
     {
-      title: 'Tablaturas',
-      url: '/tabs'
-    },
-    {
-      title: 'Bodas',
-      url: '/weddings'
+      title: 'Eventos Privados',
+      url: '/events'
     },
     {
       title: 'Contacto',

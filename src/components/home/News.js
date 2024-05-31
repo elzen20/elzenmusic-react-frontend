@@ -7,7 +7,7 @@ function News() {
       <h4 className="mt-3 text-center text-gold fantasy bg-purple p-3 purple-border rounded">
         Últimas Noticias
       </h4>
-      <Card className="w-75 m-auto purple-border">
+      {/* <Card className="w-75 m-auto purple-border">
         <Card.Header className="text-gold fantasy bg-purple">
           Tablaturas y Partituras
         </Card.Header>
@@ -26,7 +26,7 @@ function News() {
             </Button>
           </Link>
         </Card.Body>
-      </Card>
+      </Card> */}
       <Card className="w-75 mt-2 m-auto purple-border">
         <Card.Header className="text-gold fantasy bg-purple">
           Bodas y Eventos Privados
@@ -40,7 +40,7 @@ function News() {
           </Card.Text>
           <Link to="/weddings">
             <Button className="inverted-outline-purple">
-              Ir a la sección de Bodas
+              Ir a la sección de eventos privados
             </Button>
           </Link>
         </Card.Body>
