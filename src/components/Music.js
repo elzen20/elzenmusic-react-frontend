@@ -15,7 +15,7 @@ function Music() {
               width="100%"
               height="84%"
               frameBorder="0"
-              allowfullscreen=""
+              allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
@@ -31,7 +31,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -44,7 +44,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -59,7 +59,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -72,7 +72,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -87,7 +87,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -100,7 +100,7 @@ function Music() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                 ></iframe>
@@ -114,38 +114,49 @@ function Music() {
               width="100%"
               height="25%"
               frameBorder="0"
-              allowfullscreen=""
+              allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
           </Col>
         </Row>
-        <Row className="pb-5 mb-5">
+        <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
           <Col lg={{ span: 12 }} xs={{ span: 12 }}>
-            <h2 className="text-gold fantasy mb-5">Videos Musicales</h2>
-            <Row className="pb-5">
+            <h2 className="text-gold fantasy mb-lg-5 p-md-0 m-md-0">Videos Musicales</h2>
+            <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
               <Col>
               <iframe
-              width="40%"
-              height="200%"
+              className="youtube-iframe"
               src="https://www.youtube.com/embed/videoseries?si=LJazzyicVwxkWCzm&amp;list=PLF6N0Iy5VM_QXOkXHPF9TH0RJknCQoF38"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
               </Col>
             </Row>
           </Col>
         </Row>
-        {/* <Row className="py-5">
+        <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
           <Col lg={{ span: 12 }} xs={{ span: 12 }}>
-            <h2 className="text-gold fantasy my-5">Colaboraciones</h2>
-            
+            <h2 className="text-gold fantasy mt-5 ">Colaboraciones</h2>
+            <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
+              <Col>
+              <iframe
+              className="youtube-iframe"
+              src="https://www.youtube.com/embed/7vM2PO3mJTo?si=AY30GglzyaY9mA2M8"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+              </Col>
+            </Row>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col lg={{ span: 12 }} xs={{ span: 12 }}>
             <h2 className="text-gold fantasy my-5">Detras de Cámaras</h2>
           </Col>

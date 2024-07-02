@@ -36,11 +36,11 @@ function Bio() {
             </Button>
           )}
         </Card.Text>
-        <Link to="/contact">
+        {/* <Link to="/contact">
           <Button className="inverted-outline-purple">
-            Click aquí para enviar un correo
+            Click aquí para contactarnos
           </Button>
-        </Link>
+        </Link> */}
       </Card.Body>
     </Card>
   );

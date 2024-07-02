@@ -4,6 +4,7 @@ import Visualizer from "./home/Visualizer";
 import News from "./home/News";
 import Releases from "./home/Releases";
 import Bio from "./home/Bio";
+import EmailForm from "./Form";
 import "../App.css";
 function Home() {
   return (
@@ -19,6 +20,10 @@ function Home() {
             <Visualizer/>
           {/* Bio */}
             <Bio/>
+            {/* <div className=".d-none .d-sm-block">
+            <EmailForm />
+            </div> */}
+            
           </Col>
           {/* Lanzamientos */}
           <Col lg={{ span: 3, order: 3 }} xs={{ span: 12, order: 3 }}>
