@@ -12,10 +12,10 @@ export default [
     //   title: 'Tablaturas',
     //   url: '/tabs'
     // },
-    {
-      title: 'Eventos Privados',
-      url: '/events'
-    },
+    // {
+    //   title: 'Eventos Privados',
+    //   url: '/events'
+    // },
     {
       title: 'Contacto',
       url: '/contact'

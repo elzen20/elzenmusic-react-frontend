@@ -6,6 +6,8 @@ import Tabs from "./components/Tabs";
 import CartScreen from "./components/CartScreen";
 import Payment from "./components/Payment";
 import Completion from "./components/Completion";
+import Contact from "./components/Contact";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 import App from "./App";
 
 const AppRoutes = (props) => (
@@ -22,7 +24,7 @@ const AppRoutes = (props) => (
         element={<Music {...props} />} // Pasar props a Music
       />
 
-      <Route
+      {/* <Route
         exact
         path="/tabs"
         element={<Tabs {...props} />} // Pasar props a Home
@@ -41,6 +43,16 @@ const AppRoutes = (props) => (
         exact
         path="/completion"
         element={<Completion {...props} />} // Pasar props a Home
+      /> */}
+      <Route
+        exact
+        path="/contact"
+        element={<Contact {...props} />} // Pasar props a Home
+      />
+      <Route
+        exact
+        path="/privacy-policy"
+        element={<PrivacyPolicy {...props} />} // Pasar props a Home
       />
     </Routes>
   </App>

@@ -38,11 +38,11 @@ function News() {
           <Card.Text className="fantasy purple-font">
             Conoce la calidad de mi performance en vivo.
           </Card.Text>
-          <Link to="/weddings">
+          {/* <Link to="/weddings">
             <Button className="inverted-outline-purple">
               Ir a la sección de eventos privados
             </Button>
-          </Link>
+          </Link> */}
         </Card.Body>
       </Card>
       <Card className="w-75 mt-2 m-auto purple-border">
@@ -68,11 +68,11 @@ function News() {
           <Card.Text className="fantasy purple-font">
             Puedes entrar a nuestro Sound Better presionando la imagen
           </Card.Text>
-          <Link to="/contact">
-            <Button className="inverted-outline-purple">
+          {/* <Link to="/contact"> */}
+            <Button href="https://wa.me/+528717274478" className="inverted-outline-purple">
               Puedes también contactarnos
             </Button>
-          </Link>
+          {/* </Link> */}
         </Card.Body>
       </Card>
       <Card className="w-75 mt-2 m-auto purple-border">
