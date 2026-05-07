@@ -24,6 +24,7 @@ jobs:
 
       - name: Build production bundle
         env:
+          CI: false
           # ── Variables (Settings → Variables → Actions) ──────────────────
           REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ vars.REACT_APP_FIREBASE_AUTH_DOMAIN }}
           REACT_APP_FIREBASE_PROJECT_ID: ${{ vars.REACT_APP_FIREBASE_PROJECT_ID }}
