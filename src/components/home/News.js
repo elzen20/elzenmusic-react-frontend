@@ -27,6 +27,31 @@ function News() {
           </Link>
         </Card.Body>
       </Card> */}
+            <Card className="w-75 mt-2 m-auto purple-border">
+        <Card.Header className="text-gold fantasy bg-purple">
+          Red Ocean en vivo
+        </Card.Header>
+        <Card.Body className="bg-light-gold">
+          <Card.Title className="fantasy purple-font">
+            ¿Ya viste el Red Ocean en vivo?
+          </Card.Title>
+          <Card.Img
+            variant="top"
+            src="/images/modal-promo/RedOceanDesktop.png"
+          />
+          <Card.Text className="fantasy purple-font">
+            Te recomiendo que veas este increíble performance en vivo de Red
+            Ocean, grabado en el Teatro Garibay de Torreon, Coahuila.
+          </Card.Text>
+          <a
+            href="https://www.youtube.com/watch?v=dRh95Jnt8aA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="inverted-outline-purple">Ver el Video</Button>
+          </a>
+        </Card.Body>
+      </Card>
       <Card className="w-75 mt-2 m-auto purple-border">
         <Card.Header className="text-gold fantasy bg-purple">
           Bodas y Eventos Privados

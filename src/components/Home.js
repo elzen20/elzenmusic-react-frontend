@@ -6,9 +6,11 @@ import Releases from "./home/Releases";
 import Bio from "./home/Bio";
 import EmailForm from "./Form";
 import "../App.css";
+import PromoModal from "./PromoModal";
 function Home() {
   return (
     <div className="Gallery fade-in">
+      <PromoModal />
       <Container fluid>
         <Row className="mb-5 pb-5">
           {/* Noticias */}
