@@ -8,12 +8,24 @@ const SPOTIFY_ARTIST_URL =
   "https://open.spotify.com/artist/786LaXEMjTkduykfZsmbox";
 const SPOTIFY_TRACK_URL =
   "https://open.spotify.com/album/6fVTD5jVP8XBdFMfKV7rGj";
-const GATE_FALLBACK_IMAGE =
+const GATE_DESKTOP_FALLBACK_IMAGE =
   `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_2.png`;
-const GATE_BACKGROUND_VIDEO =
+const GATE_MOBILE_FALLBACK_IMAGE =
+  `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_mobile.png`;
+const GATE_DESKTOP_BACKGROUND_VIDEO =
   `${process.env.PUBLIC_URL}/images/modal-promo/Red_ocean_animation.mp4`;
+const GATE_MOBILE_BACKGROUND_VIDEO =
+  `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_animation_mobile.mp4`;
 
 function SpotifyGateLanding() {
+  const isMobileViewport = window.matchMedia("(max-width: 576px)").matches;
+  const gateFallbackImage = isMobileViewport
+    ? GATE_MOBILE_FALLBACK_IMAGE
+    : GATE_DESKTOP_FALLBACK_IMAGE;
+  const gateBackgroundVideo = isMobileViewport
+    ? GATE_MOBILE_BACKGROUND_VIDEO
+    : GATE_DESKTOP_BACKGROUND_VIDEO;
+
   const params = new URLSearchParams(window.location.search);
   const utmSource = params.get("utm_source") || "direct";
   const utmMedium = params.get("utm_medium") || "none";
@@ -31,7 +43,7 @@ function SpotifyGateLanding() {
   };
 
   const backgroundStyle = {
-    backgroundImage: `url(${GATE_FALLBACK_IMAGE})`,
+    backgroundImage: `url(${gateFallbackImage})`,
   };
 
   return (
@@ -43,10 +55,10 @@ function SpotifyGateLanding() {
         loop
         playsInline
         preload="metadata"
-        poster={GATE_FALLBACK_IMAGE}
+        poster={gateFallbackImage}
         aria-hidden="true"
       >
-        <source src={GATE_BACKGROUND_VIDEO} type="video/mp4" />
+        <source src={gateBackgroundVideo} type="video/mp4" />
       </video>
       <div className="spotify-gate-overlay" />
       <section className="spotify-gate-panel">
