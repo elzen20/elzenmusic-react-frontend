@@ -8,6 +8,7 @@ import Payment from "./components/Payment";
 import Completion from "./components/Completion";
 import Contact from "./components/Contact";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import SpotifyGateLanding from "./components/SpotifyGateLanding";
 import App from "./App";
 
 const AppRoutes = (props) => (
@@ -16,6 +17,11 @@ const AppRoutes = (props) => (
       <Route
         exact
         path="/"
+        element={<SpotifyGateLanding {...props} />}
+      />
+      <Route
+        exact
+        path="/website"
         element={<Home {...props} />} // Pasar props a Home
       />
       <Route
@@ -53,6 +59,11 @@ const AppRoutes = (props) => (
         exact
         path="/privacy-policy"
         element={<PrivacyPolicy {...props} />} // Pasar props a Home
+      />
+      <Route
+        exact
+        path="/spotify-gate"
+        element={<SpotifyGateLanding {...props} />}
       />
     </Routes>
   </App>

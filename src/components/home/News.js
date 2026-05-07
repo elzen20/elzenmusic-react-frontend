@@ -1,12 +1,104 @@
 import { Card, Button } from "react-bootstrap";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  completeSpotifySocialGateFromUrl,
+  SPOTIFY_TRACK_URL,
+  startSpotifySocialGateAuth,
+} from "../../js/spotifySocialGate";
+
 function News() {
+  const [spotifyState, setSpotifyState] = useState({
+    status: "idle",
+    message: "",
+  });
+  const oauthHandledRef = useRef(false);
+
+  useEffect(() => {
+    if (oauthHandledRef.current) {
+      return;
+    }
+
+    oauthHandledRef.current = true;
+
+    const handleSpotifyReturn = async () => {
+      const result = await completeSpotifySocialGateFromUrl();
+
+      if (result.status === "idle") {
+        return;
+      }
+
+      if (result.status === "error") {
+        setSpotifyState({
+          status: "error",
+          message: result.message,
+        });
+        return;
+      }
+
+      setSpotifyState({
+        status: "success",
+        message: "Follow completado. Redirigiendo a Red Ocean en Spotify...",
+      });
+      window.location.assign(SPOTIFY_TRACK_URL);
+    };
+
+    handleSpotifyReturn();
+  }, []);
+
+  const onSpotifyGateClick = async () => {
+    setSpotifyState({
+      status: "processing",
+      message: "Abriendo Spotify para autorizacion...",
+    });
+
+    try {
+      await startSpotifySocialGateAuth();
+    } catch (errorObject) {
+      setSpotifyState({
+        status: "error",
+        message: errorObject.message || "No se pudo iniciar autorizacion con Spotify.",
+      });
+    }
+  };
+
   return (
     <>
       <h4 className="mt-3 text-center text-gold fantasy bg-purple p-3 purple-border rounded">
         Últimas Noticias
       </h4>
+      <Card className="w-75 mt-2 m-auto purple-border">
+        <Card.Header className="text-gold fantasy bg-purple">
+          Spotify Social Gate
+        </Card.Header>
+        <Card.Body className="bg-light-gold">
+          <Card.Title className="fantasy purple-font">
+            Sigue mi perfil y desbloquea Red Ocean
+          </Card.Title>
+          <Card.Text className="fantasy purple-font">
+            Presiona el boton para autorizar Spotify. Cuando se confirme el
+            follow a mi perfil de artista, te redirigiremos automaticamente al
+            track Red Ocean.
+          </Card.Text>
+          <Button
+            className="inverted-outline-purple"
+            onClick={onSpotifyGateClick}
+            disabled={spotifyState.status === "processing"}
+          >
+            {spotifyState.status === "processing"
+              ? "Conectando con Spotify..."
+              : "Seguir en Spotify y abrir Red Ocean"}
+          </Button>
+          {spotifyState.message ? (
+            <Card.Text
+              className={`mt-3 fantasy ${
+                spotifyState.status === "error" ? "text-danger" : "purple-font"
+              }`}
+            >
+              {spotifyState.message}
+            </Card.Text>
+          ) : null}
+        </Card.Body>
+      </Card>
       {/* <Card className="w-75 m-auto purple-border">
         <Card.Header className="text-gold fantasy bg-purple">
           Tablaturas y Partituras

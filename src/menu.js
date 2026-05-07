@@ -2,7 +2,7 @@
 export default [
   {
     title: 'Inicio',
-    url: '/'
+    url: '/website'
   },
     {
       title: 'Música/Videos',

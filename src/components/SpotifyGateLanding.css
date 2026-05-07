@@ -1,0 +1,144 @@
+.spotify-gate-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: gate-bg-reveal 2s ease-out both;
+}
+
+.spotify-gate-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 10, 35, 0.88), rgba(37, 6, 39, 0.7));
+  animation: gate-overlay-reveal 2s ease-out both;
+}
+
+.spotify-gate-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  background: rgba(15, 10, 35, 0.72);
+  border: 1px solid rgba(218, 168, 30, 0.55);
+  border-radius: 20px;
+  padding: 28px 26px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #f6df94;
+  backdrop-filter: blur(3px);
+  animation: gate-panel-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.spotify-gate-kicker {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  opacity: 0.82;
+}
+
+.spotify-gate-title {
+  margin: 8px 0 10px;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1;
+  font-family: "Bebas Neue", "Segoe UI", sans-serif;
+  color: #fff2c7;
+}
+
+.spotify-gate-copy {
+  margin: 0 auto 18px;
+  max-width: 460px;
+  color: #f3e4bf;
+  font-size: 1rem;
+}
+
+.spotify-gate-cta {
+  width: 100%;
+  max-width: 360px;
+  margin: 8px auto 0;
+  display: block !important;
+  border-radius: 999px !important;
+  border: 3px solid #f1c03a !important;
+  background: #1db954 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+}
+
+.spotify-gate-cta:hover {
+  filter: brightness(1.05) !important;
+}
+
+.spotify-gate-message {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  color: #f2dba0;
+}
+
+.spotify-gate-error {
+  color: #ff9b9b;
+}
+
+.spotify-gate-ghost-link {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  font-size: 0.84rem;
+  transition: opacity 0.25s ease;
+}
+
+.spotify-gate-ghost-link:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 576px) {
+  .spotify-gate-page {
+    padding: 14px;
+  }
+
+  .spotify-gate-panel {
+    padding: 22px 16px;
+  }
+}
+
+@keyframes gate-bg-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+    filter: saturate(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes gate-overlay-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gate-panel-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

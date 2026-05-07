@@ -10,7 +10,7 @@ import PromoModal from "./PromoModal";
 function Home() {
   return (
     <div className="Gallery fade-in">
-      <PromoModal />
+      <PromoModal delayMs={5000} />
       <Container fluid>
         <Row className="mb-5 pb-5">
           {/* Noticias */}

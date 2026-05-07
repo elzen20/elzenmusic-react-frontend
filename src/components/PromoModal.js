@@ -3,13 +3,18 @@ import { Modal, Button } from "react-bootstrap";
 import { AiOutlineClose } from "react-icons/ai";
 import "./PromoModal.css";
 
-function PromoModal({ youtubeUrl }) {
+function PromoModal({ youtubeUrl, delayMs = 0 }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Mostrar el modal al montar la página
-    setShow(true);
-  }, []);
+    const timer = window.setTimeout(() => {
+      setShow(true);
+    }, delayMs);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [delayMs]);
 
   const handleClose = () => setShow(false);
 
