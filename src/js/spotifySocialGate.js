@@ -80,10 +80,12 @@ function getClientId() {
 }
 
 function getRedirectUri() {
-  return (
-    process.env.REACT_APP_SPOTIFY_REDIRECT_URI ||
-    `${window.location.origin}${window.location.pathname}`
-  );
+  if (process.env.REACT_APP_SPOTIFY_REDIRECT_URI) {
+    return process.env.REACT_APP_SPOTIFY_REDIRECT_URI.trim();
+  }
+  // Fallback: use current origin + "/" so it always matches the registered URI
+  // regardless of whether the user entered via www or non-www.
+  return `${window.location.origin}/`;
 }
 
 export async function startSpotifySocialGateAuth() {
