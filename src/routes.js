@@ -22,7 +22,7 @@ const AppRoutes = (props) => (
       <Route
         exact
         path="/website"
-        element={<Home {...props} />} // Pasar props a Home
+        element={<Home {...props} />}
       />
       <Route
         exact

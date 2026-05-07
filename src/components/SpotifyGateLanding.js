@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { analytics, logEvent } from "../js/firebase";
 import "./SpotifyGateLanding.css";
 
 const SPOTIFY_ARTIST_URL =
@@ -9,9 +10,20 @@ const SPOTIFY_TRACK_URL =
   "https://open.spotify.com/album/6fVTD5jVP8XBdFMfKV7rGj";
 
 function SpotifyGateLanding() {
+  const params = new URLSearchParams(window.location.search);
+  const utmSource = params.get("utm_source") || "direct";
+  const utmMedium = params.get("utm_medium") || "none";
+  const utmCampaign = params.get("utm_campaign") || "none";
+  const trafficInfo = { utm_source: utmSource, utm_medium: utmMedium, utm_campaign: utmCampaign };
+
   const handleListen = () => {
-    window.open(SPOTIFY_ARTIST_URL, "_blank", "noopener,noreferrer");
+    logEvent(analytics, "spotify_gate_listen_click", { song: "Red Ocean", ...trafficInfo });
     window.location.assign(SPOTIFY_TRACK_URL);
+  };
+
+  const handleFollow = () => {
+    logEvent(analytics, "spotify_gate_follow_click", { artist: "Elzen", ...trafficInfo });
+    window.open(SPOTIFY_ARTIST_URL, "_blank", "noopener,noreferrer");
   };
 
   const backgroundStyle = {
@@ -32,7 +44,15 @@ function SpotifyGateLanding() {
           Escuchar Red Ocean ❤🌊
         </Button>
 
-        <Link to="/website" className="spotify-gate-ghost-link">
+        <button className="spotify-gate-follow-btn" onClick={handleFollow}>
+          Seguirme en Spotify
+        </button>
+
+        <Link
+          to="/website"
+          className="spotify-gate-ghost-link"
+          onClick={() => logEvent(analytics, "spotify_gate_website_click", { ...trafficInfo })}
+        >
           Ir a WebSite Oficial
         </Link>
       </section>
