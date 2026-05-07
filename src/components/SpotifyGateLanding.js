@@ -27,7 +27,7 @@ function SpotifyGateLanding() {
   };
 
   const backgroundStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image.png)`,
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_2.png)`,
   };
 
   return (
