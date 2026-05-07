@@ -8,6 +8,10 @@ const SPOTIFY_ARTIST_URL =
   "https://open.spotify.com/artist/786LaXEMjTkduykfZsmbox";
 const SPOTIFY_TRACK_URL =
   "https://open.spotify.com/album/6fVTD5jVP8XBdFMfKV7rGj";
+const GATE_FALLBACK_IMAGE =
+  `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_2.png`;
+const GATE_BACKGROUND_VIDEO =
+  `${process.env.PUBLIC_URL}/images/modal-promo/Red_ocean_animation.mp4`;
 
 function SpotifyGateLanding() {
   const params = new URLSearchParams(window.location.search);
@@ -27,11 +31,23 @@ function SpotifyGateLanding() {
   };
 
   const backgroundStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_2.png)`,
+    backgroundImage: `url(${GATE_FALLBACK_IMAGE})`,
   };
 
   return (
     <main className="spotify-gate-page" style={backgroundStyle}>
+      <video
+        className="spotify-gate-video-bg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={GATE_FALLBACK_IMAGE}
+        aria-hidden="true"
+      >
+        <source src={GATE_BACKGROUND_VIDEO} type="video/mp4" />
+      </video>
       <div className="spotify-gate-overlay" />
       <section className="spotify-gate-panel">
         <p className="spotify-gate-kicker">Nueva Canción</p>
