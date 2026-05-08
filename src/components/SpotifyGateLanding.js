@@ -62,23 +62,19 @@ function SpotifyGateLanding() {
       </video>
       <div className="spotify-gate-overlay" />
       <section className="spotify-gate-panel">
-        <p className="spotify-gate-kicker">Nueva Canción</p>
         <h1 className="spotify-gate-title">Escucha Red Ocean</h1>
-        <p className="spotify-gate-copy">
-          Sigue mi perfil en Spotify y escucha el nuevo track.
-        </p>
 
         <Button className="spotify-gate-cta" onClick={handleListen}>
           Escuchar Red Ocean ❤🌊
         </Button>
 
-        <button className="spotify-gate-follow-btn" onClick={handleFollow}>
+        <button className="spotify-gate-secondary-btn" onClick={handleFollow}>
           Seguirme en Spotify
         </button>
 
         <Link
           to="/website"
-          className="spotify-gate-ghost-link"
+          className="spotify-gate-secondary-btn spotify-gate-link-btn"
           onClick={() => logEvent(analytics, "spotify_gate_website_click", { ...trafficInfo })}
         >
           Ir a WebSite Oficial
