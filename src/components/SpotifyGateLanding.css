@@ -1,7 +1,10 @@
 .spotify-gate-page {
   position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -138,7 +141,8 @@
 
 @media (max-width: 576px) {
   .spotify-gate-page {
-    min-height: 100svh;
+    height: 100dvh;
+    min-height: 100dvh;
     align-items: flex-end;
     justify-content: center;
     padding: 14px;
