@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { analytics, logEvent } from "../js/firebase";
 import "./SpotifyGateLanding.css";
@@ -62,11 +61,9 @@ function SpotifyGateLanding() {
       </video>
       <div className="spotify-gate-overlay" />
       <section className="spotify-gate-panel">
-        <h1 className="spotify-gate-title">Escucha Red Ocean</h1>
-
-        <Button className="spotify-gate-cta" onClick={handleListen}>
-          Escuchar Red Ocean ❤🌊
-        </Button>
+        <button className="spotify-gate-title" onClick={handleListen}>
+          Escucha Red Ocean ❤🌊
+        </button>
 
         <button className="spotify-gate-secondary-btn" onClick={handleFollow}>
           Seguirme en Spotify
