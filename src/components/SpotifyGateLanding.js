@@ -62,7 +62,8 @@ function SpotifyGateLanding() {
       <div className="spotify-gate-overlay" />
       <section className="spotify-gate-panel">
         <button className="spotify-gate-title" onClick={handleListen}>
-          Escucha Red Ocean ❤🌊
+          <span className="spotify-gate-title-label">Escucha Red Ocean</span>
+          <span className="spotify-gate-title-emojis" aria-hidden="true">❤️🌊</span>
         </button>
 
         <button className="spotify-gate-secondary-btn" onClick={handleFollow}>
