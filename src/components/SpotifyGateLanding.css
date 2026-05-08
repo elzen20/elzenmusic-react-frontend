@@ -1,6 +1,7 @@
 .spotify-gate-page {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -134,11 +135,49 @@
 
 @media (max-width: 576px) {
   .spotify-gate-page {
+    min-height: 100svh;
+    align-items: flex-end;
+    justify-content: center;
     padding: 14px;
+    padding-top: calc(14px + env(safe-area-inset-top));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+
+  .spotify-gate-video-bg {
+    object-position: center top;
+    transform: scale(1.015);
   }
 
   .spotify-gate-panel {
-    padding: 22px 16px;
+    max-width: 94vw;
+    border-radius: 18px;
+    padding: 20px 16px;
+  }
+
+  .spotify-gate-title {
+    font-size: clamp(2rem, 9vw, 2.85rem);
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .spotify-gate-copy {
+    font-size: 0.98rem;
+    margin-bottom: 14px;
+  }
+
+  .spotify-gate-cta {
+    max-width: 100%;
+  }
+
+  .spotify-gate-overlay {
+    background: linear-gradient(140deg, rgba(15, 10, 35, 0.22), rgba(37, 6, 39, 0.2));
+  }
+}
+
+@media (max-width: 576px) and (prefers-reduced-motion: no-preference) {
+  .spotify-gate-page {
+    animation-name: gate-bg-reveal-mobile;
+    animation-duration: 1.2s;
   }
 }
 
@@ -172,5 +211,18 @@
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gate-bg-reveal-mobile {
+  0% {
+    opacity: 0;
+    transform: scale(1.01);
+    filter: saturate(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: saturate(1);
   }
 }
