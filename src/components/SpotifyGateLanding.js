@@ -15,7 +15,7 @@ const GATE_MOBILE_FALLBACK_IMAGE =
 const GATE_DESKTOP_BACKGROUND_VIDEO =
   `${process.env.PUBLIC_URL}/images/modal-promo/Red_ocean_animation.mp4`;
 const GATE_MOBILE_BACKGROUND_VIDEO =
-  `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_animation_mobile.mp4`;
+  `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocea_CTA_animation_mobile.mp4`;
 
 function SpotifyGateLanding() {
   const isMobileViewport = window.matchMedia("(max-width: 576px)").matches;

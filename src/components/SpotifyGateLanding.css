@@ -144,29 +144,42 @@
   }
 
   .spotify-gate-video-bg {
-    object-position: center top;
-    transform: scale(1.015);
+    object-position: center 30%;
+    transform: scale(1);
   }
 
   .spotify-gate-panel {
     max-width: 94vw;
-    border-radius: 18px;
-    padding: 20px 16px;
+    border-radius: 16px;
+    padding: 16px 14px;
+  }
+
+  .spotify-gate-kicker {
+    font-size: 0.74rem;
   }
 
   .spotify-gate-title {
-    font-size: clamp(2rem, 9vw, 2.85rem);
-    margin-top: 6px;
-    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 8.3vw, 2.45rem);
+    margin-top: 4px;
+    margin-bottom: 8px;
   }
 
   .spotify-gate-copy {
-    font-size: 0.98rem;
-    margin-bottom: 14px;
+    font-size: 0.94rem;
+    margin-bottom: 10px;
   }
 
   .spotify-gate-cta {
     max-width: 100%;
+    margin-top: 4px;
+  }
+
+  .spotify-gate-follow-btn {
+    margin-top: 8px;
+  }
+
+  .spotify-gate-ghost-link {
+    margin-top: 12px;
   }
 
   .spotify-gate-overlay {
