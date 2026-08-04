@@ -131,6 +131,23 @@
   background: rgba(15, 10, 35, 0.68);
 }
 
+.spotify-gate-youtube-btn {
+  background: rgba(195, 20, 20, 0.84);
+  border-color: rgba(255, 120, 120, 0.55);
+  color: rgba(255, 245, 245, 0.95);
+}
+
+.spotify-gate-youtube-btn:hover {
+  background: rgba(225, 32, 32, 0.95);
+  border-color: rgba(255, 165, 165, 0.72);
+  color: #ffffff;
+}
+
+.spotify-gate-youtube-btn:focus-visible {
+  outline: 2px solid rgba(255, 165, 165, 0.85);
+  outline-offset: 3px;
+}
+
 .spotify-gate-link-btn {
   margin-top: 10px;
 }

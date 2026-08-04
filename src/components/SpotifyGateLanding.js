@@ -7,6 +7,8 @@ const SPOTIFY_ARTIST_URL =
   "https://open.spotify.com/artist/786LaXEMjTkduykfZsmbox";
 const SPOTIFY_TRACK_URL =
   "https://open.spotify.com/album/6fVTD5jVP8XBdFMfKV7rGj";
+const YOUTUBE_JAZZ_FLAMENCO_PLAYLIST_URL =
+  "https://www.youtube.com/watch?v=V4O6QCsVQnc&list=PLGZ34gicjTY8";
 const GATE_DESKTOP_FALLBACK_IMAGE =
   `${process.env.PUBLIC_URL}/images/modal-promo/Red_Ocean_CTA_Image_2.png`;
 const GATE_MOBILE_FALLBACK_IMAGE =
@@ -41,6 +43,11 @@ function SpotifyGateLanding() {
     window.open(SPOTIFY_ARTIST_URL, "_blank", "noopener,noreferrer");
   };
 
+  const handleJazzFlamencoPlaylist = () => {
+    logEvent(analytics, "spotify_gate_jazz_flamenco_playlist_click", { ...trafficInfo });
+    window.open(YOUTUBE_JAZZ_FLAMENCO_PLAYLIST_URL, "_blank", "noopener,noreferrer");
+  };
+
   const backgroundStyle = {
     backgroundImage: `url(${gateFallbackImage})`,
   };
@@ -68,6 +75,13 @@ function SpotifyGateLanding() {
 
         <button className="spotify-gate-secondary-btn" onClick={handleFollow}>
           Seguirme en Spotify
+        </button>
+
+        <button
+          className="spotify-gate-secondary-btn spotify-gate-youtube-btn"
+          onClick={handleJazzFlamencoPlaylist}
+        >
+          Guitarra Jazz / Flamenco Playlist ▶️🍷☕🎶
         </button>
 
         <Link
