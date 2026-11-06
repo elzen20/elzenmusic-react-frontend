@@ -80,13 +80,7 @@ function YouTubeVideos() {
     value === undefined ? "No disponible" : numberFormatter.format(Number(value));
 
   return (
-    <section aria-labelledby="featured-videos-heading">
-      <h2
-        id="featured-videos-heading"
-        className="text-gold fantasy mt-5 mb-4"
-      >
-        Videos destacados
-      </h2>
+    <section aria-label="Videos musicales destacados">
       <Row className="g-4">
         {videos.map((video) => {
           const videoStatistics = statistics[video.id];

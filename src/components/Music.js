@@ -166,7 +166,7 @@ function Music() {
         </Row>
         <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
           <Col lg={{ span: 12 }} xs={{ span: 12 }}>
-            <h2 className="text-gold fantasy mb-lg-5 p-md-0 m-md-0">Videos Musicales</h2>
+            <h2 className="text-gold fantasy mb-lg-5 p-md-0 m-md-0">Videos musicales destacados</h2>
             <YouTubeVideos />
           </Col>
         </Row>
