@@ -146,22 +146,21 @@ function Music() {
         <Row className="music-video-section">
           <Col lg={10} xs={12} className="mx-auto">
             <h2 className="text-gold fantasy mb-4">Flamenco Jazz Playlist</h2>
-            <iframe
-              className="music-video-frame"
-              src="https://www.youtube.com/embed/videoseries?list=PLGZ34gicjTY8&index=0"
-              title="Flamenco Jazz Playlist de Elzen en YouTube"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
             <a
-              className="text-gold d-inline-block mt-2"
+              className="flamenco-jazz-cover-link"
               href="https://youtube.com/playlist?list=PLGZ34gicjTY8&si=bZiWbx3YsMehmLLW"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Abrir la playlist Flamenco Jazz de Elzen en YouTube"
             >
-              Abrir playlist en YouTube
+              <img
+                className="flamenco-jazz-cover"
+                src={`${process.env.PUBLIC_URL}/images/photos/Flamenco_Jazz_Cover.jpeg`}
+                alt="Portada de la playlist Flamenco Jazz de Elzen"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="text-gold d-block mt-2">Abrir playlist en YouTube</span>
             </a>
           </Col>
         </Row>
