@@ -3,6 +3,7 @@ import Header from "./layout/Header";
 import Content from "./layout/Content";
 import Footer from "./layout/Footer";
 import { useLocation } from "react-router-dom";
+import SeoMetadata from "./components/SeoMetadata";
 
 
 function App(props) {
@@ -13,6 +14,7 @@ function App(props) {
   
   return (
     <div>
+      <SeoMetadata />
       {!hideLayout ? <Header items={items}></Header> : null}
       <Content body={children}></Content>
       {!hideLayout ? <Footer items={items}></Footer> : null}
