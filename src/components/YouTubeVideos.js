@@ -8,6 +8,8 @@ const numberFormatter = new Intl.NumberFormat("es-MX");
 const videos = [
   { id: "_P0CvgcVjUc", title: "Morning Coffee" },
   { id: "IuxXDzrA6Yo", title: "Becoming Insane — cover" },
+  { id: "J0pw48AoSM8", title: "Yuanfen" },
+  { id: "7vM2PO3mJTo", title: "Una de Bossa — con Karen López" },
 ];
 
 function YouTubeVideos() {

@@ -37,6 +37,7 @@ jobs:
           REACT_APP_SPOTIFY_REDIRECT_URI: ${{ vars.REACT_APP_SPOTIFY_REDIRECT_URI }}
           # ── Secrets (Settings → Secrets → Actions) ──────────────────────
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_YOUTUBE_API_KEY: ${{ secrets.REACT_APP_YOUTUBE_API_KEY }}
         run: npm run build
 
       - name: Deploy to Firebase Hosting

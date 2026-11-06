@@ -169,33 +169,17 @@ function Music() {
             <YouTubeVideos />
             <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
               <Col>
-              <iframe
-              className="youtube-iframe"
-              src="https://www.youtube.com/embed/videoseries?si=LJazzyicVwxkWCzm&amp;list=PLF6N0Iy5VM_QXOkXHPF9TH0RJknCQoF38"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
-          <Col lg={{ span: 12 }} xs={{ span: 12 }}>
-            <h2 className="text-gold fantasy mt-5 ">Colaboraciones</h2>
-            <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
-              <Col>
-              <iframe
-              className="youtube-iframe"
-              src="https://www.youtube.com/embed/7vM2PO3mJTo?si=AY30GglzyaY9mA2M8"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+                <h2 className="text-gold fantasy mt-5 mb-4">Más videos</h2>
+                <div className="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/videoseries?si=LJazzyicVwxkWCzm&amp;list=PLF6N0Iy5VM_QXOkXHPF9TH0RJknCQoF38"
+                    title="Playlist de videos musicales de Elzen en YouTube"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </Col>
             </Row>
           </Col>
