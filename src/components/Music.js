@@ -20,25 +20,6 @@ function Music() {
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
-            <h3 className="text-gold fantasy mt-4 mb-3">Dual completo en YouTube</h3>
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/kfVKejPLbxo"
-                title="Álbum completo Dual de Elzen en YouTube"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </div>
-            <a
-              className="text-gold d-inline-block mt-2"
-              href="https://www.youtube.com/watch?v=kfVKejPLbxo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abrir álbum completo en YouTube
-            </a>
           </Col>
           <Col lg={{ span: 6 }} xs={{ span: 12 }}>
             <h2 className="text-gold fantasy my-5">Sencillos</h2>
@@ -140,19 +121,40 @@ function Music() {
             ></iframe>
           </Col>
         </Row>
-        <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
-          <Col lg={{ span: 12 }} xs={{ span: 12 }}>
-            <h2 className="text-gold fantasy mt-5 mb-4">Playlist de Flamenco Jazz</h2>
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/videoseries?list=PLGZ34gicjTY8"
-                title="Playlist de Flamenco Jazz de Elzen en YouTube"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </div>
+        <Row className="music-video-section">
+          <Col lg={10} xs={12} className="mx-auto">
+            <h2 className="text-gold fantasy mb-4">Dual completo en YouTube</h2>
+            <iframe
+              className="music-video-frame"
+              src="https://www.youtube.com/embed/kfVKejPLbxo"
+              title="Álbum completo Dual de Elzen en YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+            <a
+              className="text-gold d-inline-block mt-2"
+              href="https://www.youtube.com/watch?v=kfVKejPLbxo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir álbum completo en YouTube
+            </a>
+          </Col>
+        </Row>
+        <Row className="music-video-section">
+          <Col lg={10} xs={12} className="mx-auto">
+            <h2 className="text-gold fantasy mb-4">Flamenco Jazz Playlist</h2>
+            <iframe
+              className="music-video-frame"
+              src="https://www.youtube.com/embed/videoseries?list=PLGZ34gicjTY8&index=0"
+              title="Flamenco Jazz Playlist de Elzen en YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
             <a
               className="text-gold d-inline-block mt-2"
               href="https://youtube.com/playlist?list=PLGZ34gicjTY8&si=bZiWbx3YsMehmLLW"
@@ -167,21 +169,6 @@ function Music() {
           <Col lg={{ span: 12 }} xs={{ span: 12 }}>
             <h2 className="text-gold fantasy mb-lg-5 p-md-0 m-md-0">Videos Musicales</h2>
             <YouTubeVideos />
-            <Row className="pb-lg-5 mb-lg-5 p-md-0 m-md-0">
-              <Col>
-                <h2 className="text-gold fantasy mt-5 mb-4">Más videos</h2>
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    src="https://www.youtube.com/embed/videoseries?si=LJazzyicVwxkWCzm&amp;list=PLF6N0Iy5VM_QXOkXHPF9TH0RJknCQoF38"
-                    title="Playlist de videos musicales de Elzen en YouTube"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </Col>
-            </Row>
           </Col>
         </Row>
         {/* <Row>
